@@ -1,12 +1,8 @@
-Source: avrg-arrays
+Package: avrg-arrays
+Version: 1.0
 Section: utils
 Priority: optional
+Architecture: amd64
 Maintainer: GE <ge@email>
-Build-Depends: debhelper-compat (= 12), g++
-Standards-Version: 4.5.0
-Architecture: amd64
-
-Package: avrg-arrays
-Architecture: amd64
-Depends: ${shlibs:Depends}, ${misc:Depends}, g++
 Description: Программа для вычисления средних значений в частях массива
+Depends: g++
