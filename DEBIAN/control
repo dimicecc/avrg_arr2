@@ -3,6 +3,6 @@ Version: 1.0
 Section: utils
 Priority: optional
 Architecture: amd64
-Depends: ${shlibs:Depends}, ${misc:Depends}, g++
 Maintainer: GE <ge@email>
 Description: Программа для вычисления средних значений в частях массива
+Depends: g++
