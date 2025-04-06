@@ -46,6 +46,7 @@ jobs:
 
       - name: Run tests
         run: |
+          chmod +x usr/bin/avrg_arrays
           chmod +x cicd/tests/test_arr.sh
           ./cicd/tests/test_arr.sh
 
