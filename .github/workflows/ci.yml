@@ -89,6 +89,11 @@ jobs:
         with:
           name: avrg-arrays
 
+      - name: Inspect Docker image files
+        run: |
+          docker run --rm ${{ secrets.DOCKER_USERNAME }}/avrg-arrays:latest ls -l /usr/bin/
+          docker run --rm ${{ secrets.DOCKER_USERNAME }}/avrg-arrays:latest ls -l /usr/local/bin/
+
       - name: Build Docker image
         run: |
           docker build -t ${{ secrets.DOCKER_USERNAME }}/avrg-arrays:latest .

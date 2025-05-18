@@ -10,4 +10,4 @@ RUN apt-get update && \
     rm /tmp/avrg-arrays_1.0_all.deb && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
-ENTRYPOINT ["avrg_arrays"]
+ENTRYPOINT ["/usr/bin/avrg_arrays"]
