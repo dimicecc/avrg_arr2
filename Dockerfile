@@ -12,7 +12,8 @@ RUN ls -l /usr/bin/
 RUN ls -l /usr/local/bin/
 RUN find / -name avrg_arrays || echo "Файл avrg_arrays не найден"
 
-CMD ["ls", "-l", "/usr/bin/avrg_arrays"]
+ENTRYPOINT ["/usr/bin/avrg_arrays"]
+
 
 
 
