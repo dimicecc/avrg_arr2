@@ -6,4 +6,6 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 COPY avrg-arrays_1.0_all.deb /tmp/
 RUN dpkg -i /tmp/avrg-arrays_1.0_all.deb || apt-get install -f
-CMD ["/usr/bin/avrg_arrays", "--success"]
+ENTRYPOINT ["/usr/bin/avrg_arrays"]
+
+
