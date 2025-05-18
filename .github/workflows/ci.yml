@@ -93,6 +93,11 @@ jobs:
         with:
           name: avrg-arrays
           path: .
+  
+      - name: Make .deb executable files executable
+        run: |
+          dpkg-deb -x avrg-arrays_1.0_all.deb .
+          chmod +x ./usr/bin/avrg_arrays
 
       - name: Build Docker image
         run: |
@@ -100,12 +105,13 @@ jobs:
 
       - name: Run Docker container
         run: |
-          docker run --rm ${{ secrets.DOCKER_USERNAME }}/fibonacci-app:latest 1 2 3 4
+          docker run --rm ${{ secrets.DOCKER_USERNAME }}/fibonacci-app:latest -- 1 2 3 4
 
-      
       - name: Login to Docker Hub
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
       - name: Push Docker image
         run: docker push ${{ secrets.DOCKER_USERNAME }}/fibonacci-app:latest
+
+
 
