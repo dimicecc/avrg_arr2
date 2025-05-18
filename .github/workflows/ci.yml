@@ -103,5 +103,18 @@ jobs:
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
       - name: Push Docker image
+<<<<<<< HEAD
         run: docker push ${{ secrets.DOCKER_USERNAME }}/fibonacci-app:latest
+=======
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/avrg-arrays:latest
+
+      - name: Inspect Docker image files
+        run: |
+          docker run --rm ${{ secrets.DOCKER_USERNAME }}/avrg-arrays:latest ls -l /usr/bin/
+          docker run --rm ${{ secrets.DOCKER_USERNAME }}/avrg-arrays:latest ls -l /usr/local/bin/
+
+      - name: Run Docker container
+        run: |
+          docker run --rm ${{ secrets.DOCKER_USERNAME }}/avrg-arrays:latest
+>>>>>>> 871d0548bb3ba4ff80945be189d26e22ea273a5c
 
