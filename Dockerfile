@@ -7,6 +7,7 @@ COPY avrg-arrays_1.0_all.deb /tmp/
 
 RUN dpkg -i /tmp/avrg-arrays_1.0_all.deb || apt-get install -f -y
 
+
 # Добавим проверку расположения файла
 RUN ls -l /usr/bin/
 RUN ls -l /usr/local/bin/
