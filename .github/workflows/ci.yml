@@ -78,6 +78,7 @@ jobs:
           name: avrg-arrays
           path: avrg-arrays_1.0_all.deb
 
+
   deploy:
     runs-on: ubuntu-latest
     needs: RunPackage
@@ -108,5 +109,4 @@ jobs:
       - name: Run Docker container
         run: |
           docker run --rm ${{ secrets.DOCKER_USERNAME }}/avrg-arrays:latest
-
 
