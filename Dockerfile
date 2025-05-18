@@ -9,7 +9,8 @@ RUN dpkg -i /tmp/avrg-arrays_1.0_all.deb || apt-get install -f -y
 
 RUN ls -l /usr/bin/
 
-ENTRYPOINT ["/usr/bin"]
+ENTRYPOINT ["/usr/bin/avrg_arrays"]
+
 
 
 
