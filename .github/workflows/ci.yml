@@ -97,7 +97,7 @@ jobs:
       - name: Make .deb executable files executable
         run: |
           dpkg-deb -x avrg-arrays_1.0_all.deb .
-          chmod +x ./usr/bin/avrg_arrays
+          chmod +x ./usr/bin
 
       - name: Build Docker image
         run: |
