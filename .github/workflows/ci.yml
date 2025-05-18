@@ -64,19 +64,21 @@ jobs:
           name: avrg_arrays_binary
           path: usr/bin
 
+      - name: Make binary executable
+        run: chmod +x usr/bin/avrg_arrays
+
       - name: Clean up unnecessary files
-        run: |
-          rm -rf .git
+        run: rm -rf .git
 
       - name: Package into .deb
-        run: |
-          dpkg-deb --build . avrg-arrays_1.0_all.deb
+        run: dpkg-deb --build . avrg-arrays_1.0_all.deb
 
       - name: Upload .deb artifact
         uses: actions/upload-artifact@v4
         with:
           name: avrg-arrays
           path: avrg-arrays_1.0_all.deb
+
 
 
   deploy:
